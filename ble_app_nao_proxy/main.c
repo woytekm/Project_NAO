@@ -126,7 +126,8 @@ NRF_BLE_SCAN_DEF(m_scan);                                           /**< Scannin
 static uint16_t m_conn_handle_nao_c  = BLE_CONN_HANDLE_INVALID;     /**< Connection handle for NAO+  */
 
 static uint16_t                         m_conn_handle = BLE_CONN_HANDLE_INVALID;    /**< Handle of the current connection to central (Garmin watch or something else). */
-static nao_proxy_t                      m_nao_proxy;
+
+static nao_proxy_t                      m_nao_proxy;  // data related to connection to Fenix 6 or other peripheral device
 
 
 ble_uuid128_t NAO_uuid13_128 = {{ NAO_UUID_13 }};
@@ -326,6 +327,8 @@ static void ble_nao_stat_c_evt_handler(ble_nao_stat_c_t * p_ble_nao_stat_c, cons
             data = p_ble_nao_stat_evt->p_data;
             NRF_LOG_INFO("Received packet from NAO+ service 0x68 (STAT), data len:%d\r\n",p_ble_nao_stat_evt->data_len);
             NRF_LOG_INFO("bytes 0-5: %02x,%02x,%02x,%02x\r\n",data[0],data[1],data[2],data[3],data[4],data[5]);
+            err_code = ble_nao_stat_notif_forward(&m_nao_proxy, data, p_ble_nao_stat_evt->data_len);
+            NRF_LOG_INFO("forward notification returned: %d",err_code);
             break;
 
         case BLE_NAO_STAT_C_EVT_DISCONNECTED:
@@ -777,6 +780,9 @@ static void on_ble_peripheral_evt(ble_evt_t const * p_ble_evt)
     ret_code_t            err_code;
     ble_gap_evt_t const * p_gap_evt = &p_ble_evt->evt.gap_evt;
 
+
+    nao_proxy_on_ble_evt(&m_nao_proxy,p_ble_evt);
+
     switch (p_ble_evt->header.evt_id)
     {
         case BLE_GAP_EVT_CONNECTED:
@@ -1172,7 +1178,7 @@ void pm_peer_delete_all(void)
 } 
 
 
-static void nao_write_handler(nao_proxy_t * p_lbs, uint8_t *nao_write_data)
+static void nao_write_handler(nao_proxy_t * p_lbs, uint8_t const *nao_write_data, uint16_t nao_write_data_len)
 {
 }
 

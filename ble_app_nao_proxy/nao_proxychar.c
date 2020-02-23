@@ -16,7 +16,7 @@
  * @param[in]   p_nao_proxy       LED Button Service structure.
  * @param[in]   p_ble_evt   Event received from the BLE stack.
  */
-static void on_connect(nao_proxy_t * p_nao_proxy, ble_evt_t * p_ble_evt)
+static void on_connect(nao_proxy_t * p_nao_proxy, ble_evt_t const * p_ble_evt)
 {
     p_nao_proxy->conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
 }
@@ -27,7 +27,7 @@ static void on_connect(nao_proxy_t * p_nao_proxy, ble_evt_t * p_ble_evt)
  * @param[in]   p_nao_proxy       LED Button Service structure.
  * @param[in]   p_ble_evt   Event received from the BLE stack.
  */
-static void on_disconnect(nao_proxy_t * p_nao_proxy, ble_evt_t * p_ble_evt)
+static void on_disconnect(nao_proxy_t * p_nao_proxy, ble_evt_t const * p_ble_evt)
 {
     UNUSED_PARAMETER(p_ble_evt);
     p_nao_proxy->conn_handle = BLE_CONN_HANDLE_INVALID;
@@ -39,20 +39,20 @@ static void on_disconnect(nao_proxy_t * p_nao_proxy, ble_evt_t * p_ble_evt)
  * @param[in]   p_nao_proxy       LED Button Service structure.
  * @param[in]   p_ble_evt   Event received from the BLE stack.
  */
-static void on_write(nao_proxy_t * p_nao_proxy, ble_evt_t * p_ble_evt)
+static void on_write(nao_proxy_t * p_nao_proxy, ble_evt_t const * p_ble_evt)
 {
-    ble_gatts_evt_write_t * p_evt_write = &p_ble_evt->evt.gatts_evt.params.write;
+    ble_gatts_evt_write_t const * p_evt_write = &p_ble_evt->evt.gatts_evt.params.write;
     
     if ((p_evt_write->handle == p_nao_proxy->nao_write_char_handles.value_handle) &&
-        (p_evt_write->len == 1) && // zmienic na długość pakietu pisanego do NAO
+        (p_evt_write->len == 1) && // zmienic na długość pakietu pisanego do NAO z Garmina lub innego urządzenia peripheral
         (p_nao_proxy->nao_write_handler != NULL))
     {
-        p_nao_proxy->nao_write_handler(p_nao_proxy, p_evt_write->data);
+        p_nao_proxy->nao_write_handler(p_nao_proxy, p_evt_write->data, p_evt_write->len);
     }
 }
 
 
-void nao_proxy_on_ble_evt(nao_proxy_t * p_nao_proxy, ble_evt_t * p_ble_evt)
+void nao_proxy_on_ble_evt(nao_proxy_t * p_nao_proxy, ble_evt_t const * p_ble_evt)
 {
     switch (p_ble_evt->header.evt_id)
     {
@@ -164,9 +164,9 @@ static uint32_t nao_notif_char_add(nao_proxy_t * p_nao_proxy, const nao_proxy_in
 
     attr_char_value.p_uuid       = &ble_uuid;
     attr_char_value.p_attr_md    = &attr_md;
-    attr_char_value.init_len     = sizeof(uint8_t);
+    attr_char_value.init_len     = NAO_PACKET_SIZE;
     attr_char_value.init_offs    = 0;
-    attr_char_value.max_len      = sizeof(uint8_t);
+    attr_char_value.max_len      = NAO_PACKET_SIZE;
     attr_char_value.p_value      = NULL;
     
     return sd_ble_gatts_characteristic_add(p_nao_proxy->service_handle, &char_md,

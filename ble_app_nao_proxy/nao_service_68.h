@@ -1,3 +1,6 @@
+#include "nao_proxychar.h"
+
+
 #define NAO_STAT_SRV_UUID_UINT128 {{0xba,0x5c,0xf7,0x93,0x3b,0x12,0x16,0xb1,0xe4,0x11,0x08,0x7b,0x2a,0x6e,0x86,0x68}}
 #define NAO_UUID_68_UINT16 0x6e2a
 
@@ -84,3 +87,5 @@ void ble_nao_stat_c_on_ble_evt(ble_nao_stat_c_t * p_ble_nao_stat_c, const ble_ev
 uint32_t ble_nao_stat_c_rx_notif_enable(ble_nao_stat_c_t * p_ble_nao_stat_c);
 uint32_t ble_nao_stat_c_handles_assign(ble_nao_stat_c_t * p_ble_nao_stat, const uint16_t conn_handle, const ble_nao_stat_c_handles_t * p_peer_handles);
 uint32_t ble_nao_stat_c_send_auth(ble_nao_stat_c_t * p_ble_nao_stat_c);
+uint32_t ble_nao_stat_notif_forward(nao_proxy_t * p_proxy, uint8_t *data, uint16_t data_len);
+

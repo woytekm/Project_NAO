@@ -8,7 +8,50 @@
 #include "ble_gatt.h"
 #include "nao_service_68.h"
 #include "nao_generic.h"
+#include "nao_proxychar.h"
 #include "nrf_log.h"
+
+
+
+uint32_t ble_nao_stat_notif_forward(nao_proxy_t * p_proxy, uint8_t *data, uint16_t data_len)
+{
+    uint32_t err_code;
+    uint16_t len;
+
+    // Send value if connected and notifying
+    if (p_proxy->conn_handle != BLE_CONN_HANDLE_INVALID)
+    {
+        ble_gatts_hvx_params_t hvx_params;
+
+        len = data_len;
+
+        memset(&hvx_params, 0, sizeof(hvx_params));
+
+        hvx_params.handle = p_proxy->nao_notif_char_handles.value_handle;
+        hvx_params.type   = BLE_GATT_HVX_NOTIFICATION;
+        hvx_params.offset = 0;
+        hvx_params.p_len  = &data_len;
+        hvx_params.p_data = data;
+
+        NRF_LOG_INFO("sending notification to peripheral: data len:%d",*hvx_params.p_len);
+
+        err_code = sd_ble_gatts_hvx(p_proxy->conn_handle, &hvx_params);
+
+        if ((err_code == NRF_SUCCESS) && (*hvx_params.p_len != len))
+        {
+            NRF_LOG_INFO("wrote %d bytes",*hvx_params.p_len);
+            err_code = NRF_ERROR_DATA_SIZE;
+        }
+    }
+    else
+    {
+        err_code = NRF_ERROR_INVALID_STATE;
+    }
+
+    return err_code;
+}
+
+
 
 
 void ble_nao_stat_c_on_db_disc_evt(ble_nao_stat_c_t * p_ble_nao_stat_c, ble_db_discovery_evt_t * p_evt)

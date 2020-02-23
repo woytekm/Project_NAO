@@ -22,7 +22,7 @@
 // Forward declaration of the nao_proxy_t type. 
 typedef struct nao_proxy_s nao_proxy_t;
 
-typedef void (*nao_proxy_nao_write_handler_t) (nao_proxy_t * p_nao_proxy, uint8_t *nao_write_data);
+typedef void (*nao_proxy_nao_write_handler_t) (nao_proxy_t * p_nao_proxy, uint8_t const *nao_write_data, uint16_t data_len);
 
 typedef struct
 {
@@ -59,7 +59,7 @@ uint32_t nao_proxy_init(nao_proxy_t * p_nao_proxy, const nao_proxy_init_t * p_na
  * @param[in]   p_lbs      LED Button Service structure.
  * @param[in]   p_ble_evt  Event received from the BLE stack.
  */
-void nao_proxy_on_ble_evt(nao_proxy_t * p_nao_proxy, ble_evt_t * p_ble_evt);
+void nao_proxy_on_ble_evt(nao_proxy_t * p_nao_proxy, ble_evt_t const * p_ble_evt);
 
 /**@brief Function for sending a button state notification.
  */
