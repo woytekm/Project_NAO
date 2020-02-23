@@ -2,7 +2,8 @@ PROJECT_NAME     := ble_app_hrs_rscs_relay_pca10056_s140
 TARGETS          := nrf52840_xxaa
 OUTPUT_DIRECTORY := _build
 
-SDK_ROOT := ../../../../../../..
+#SDK_ROOT := ../../../../../../..
+SDK_ROOT := /Users/wojtek/Documents/code/nRF52/nRF5SDK160098a08e2/
 PROJ_DIR := ../../..
 
 $(OUTPUT_DIRECTORY)/nrf52840_xxaa.out: \
