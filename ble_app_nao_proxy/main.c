@@ -1180,6 +1180,25 @@ void pm_peer_delete_all(void)
 
 static void nao_write_handler(nao_proxy_t * p_lbs, uint8_t const *nao_write_data, uint16_t nao_write_data_len)
 {
+  uint8_t const *nao_characteristic_addr;
+
+  nao_characteristic_addr = nao_write_data; // first byte in data array is NAO service address: 09, 13 or 68
+ 
+  NRF_LOG_INFO("Received write from peripheral: %X, %X, %X, %X, ... (len: %d)",nao_write_data[0], nao_write_data[1], nao_write_data[2], nao_write_data[3],nao_write_data_len);
+
+  switch(*nao_characteristic_addr)
+    {
+      case 9:
+       NRF_LOG_INFO("write to service 09");
+       break;
+      case 13:
+       NRF_LOG_INFO("write to service 13");
+       break;
+      case 68:
+       NRF_LOG_INFO("write to service 68"); 
+       break;
+    }
+  
 }
 
 

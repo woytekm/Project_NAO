@@ -9,6 +9,7 @@
 #include "nordic_common.h"
 #include "ble_srv_common.h"
 #include "app_util.h"
+#include "nrf_log.h"
 
 
 /**@brief Function for handling the Connect event.
@@ -42,9 +43,10 @@ static void on_disconnect(nao_proxy_t * p_nao_proxy, ble_evt_t const * p_ble_evt
 static void on_write(nao_proxy_t * p_nao_proxy, ble_evt_t const * p_ble_evt)
 {
     ble_gatts_evt_write_t const * p_evt_write = &p_ble_evt->evt.gatts_evt.params.write;
-    
+ 
+    NRF_LOG_INFO("Received packet len : %d",p_evt_write->len);
+      
     if ((p_evt_write->handle == p_nao_proxy->nao_write_char_handles.value_handle) &&
-        (p_evt_write->len == 1) && // zmienic na długość pakietu pisanego do NAO z Garmina lub innego urządzenia peripheral
         (p_nao_proxy->nao_write_handler != NULL))
     {
         p_nao_proxy->nao_write_handler(p_nao_proxy, p_evt_write->data, p_evt_write->len);
@@ -111,9 +113,9 @@ static uint32_t nao_write_char_add(nao_proxy_t * p_nao_proxy, const nao_proxy_in
 
     attr_char_value.p_uuid       = &ble_uuid;
     attr_char_value.p_attr_md    = &attr_md;
-    attr_char_value.init_len     = sizeof(uint8_t);
+    attr_char_value.init_len     = NAO_PACKET_SIZE+1; // additional byte for service addr on NAO (09,13,68), max packet len = 21 bytes
     attr_char_value.init_offs    = 0;
-    attr_char_value.max_len      = sizeof(uint8_t);
+    attr_char_value.max_len      = NAO_PACKET_SIZE+1; 
     attr_char_value.p_value      = NULL;
     
     return sd_ble_gatts_characteristic_add(p_nao_proxy->service_handle, &char_md,
@@ -218,7 +220,7 @@ uint32_t nao_proxy_init(nao_proxy_t * p_nao_proxy, const nao_proxy_init_t * p_na
 uint32_t nao_proxy_on_nao_notif(nao_proxy_t * p_nao_proxy, uint8_t *nao_notif_data)
 {
     ble_gatts_hvx_params_t params;
-    uint16_t len = NAO_PACKET_SIZE; // zmienic na długość pakietu notyfikacyjnego NAO
+    uint16_t len = NAO_PACKET_SIZE; 
     
     memset(&params, 0, sizeof(params));
     params.type = BLE_GATT_HVX_NOTIFICATION;
