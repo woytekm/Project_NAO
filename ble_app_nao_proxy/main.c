@@ -245,6 +245,8 @@ void board_led_off(uint8_t led)
  }
 
 
+// we are not forwarding AUTH messages to Garmin. Proxy does auth and encryption by itself.
+
 static void ble_nao_auth_c_evt_handler(ble_nao_auth_c_t * p_ble_nao_auth_c, const ble_nao_auth_c_evt_t * p_ble_nao_auth_evt)
 {
     uint32_t err_code;
@@ -1178,25 +1180,46 @@ void pm_peer_delete_all(void)
 } 
 
 
+uint32_t proxy_local_cmd(uint8_t const *nao_write_data, uint16_t nao_write_data_len)
+ {
+   // CMD 0x0: erase bonds, restart
+   // CMD 0x1: set NAO name (write setting to flash, erase bonds, restart)
+   // CMD 0x2: default NAO name (erase setting from flash, restart and let application use default name PETZL_NAO+_0100)
+   return NRF_SUCCESS;
+ }
+
+
 static void nao_write_handler(nao_proxy_t * p_lbs, uint8_t const *nao_write_data, uint16_t nao_write_data_len)
 {
   uint8_t const *nao_characteristic_addr;
+  uint8_t const *data_buffer = nao_write_data + 1; // increment buffer address by 1 to skip first byte
+  ret_code_t err_code;
 
-  nao_characteristic_addr = nao_write_data; // first byte in data array is NAO service address: 09, 13 or 68
+  nao_characteristic_addr = nao_write_data; // first byte in data array is NAO service address: 0x09, 0x13 or 0x68. 0x69 will be a local command to the proxy.
  
   NRF_LOG_INFO("Received write from peripheral: %X, %X, %X, %X, ... (len: %d)",nao_write_data[0], nao_write_data[1], nao_write_data[2], nao_write_data[3],nao_write_data_len);
 
   switch(*nao_characteristic_addr)
     {
-      case 9:
+      case 0x09:
        NRF_LOG_INFO("write to service 09");
+       err_code =  ble_nao_characteristic_write(m_ble_nao_stat_c.conn_handle, m_ble_nao_stat_c.handles.nao_stat_tx_handle, data_buffer, nao_write_data_len - 1);
+       APP_ERROR_CHECK(err_code);
        break;
-      case 13:
+      case 0x13:
        NRF_LOG_INFO("write to service 13");
+       err_code =  ble_nao_characteristic_write(m_ble_nao_auth_c.conn_handle, m_ble_nao_auth_c.handles.nao_auth_tx_handle, data_buffer, nao_write_data_len - 1);
+       APP_ERROR_CHECK(err_code);
        break;
-      case 68:
-       NRF_LOG_INFO("write to service 68"); 
+      case 0x68:
+       NRF_LOG_INFO("write to service 68");
+       err_code =  ble_nao_characteristic_write(m_ble_nao_conf_c.conn_handle, m_ble_nao_conf_c.handles.nao_conf_tx_handle, data_buffer, nao_write_data_len - 1);
+       APP_ERROR_CHECK(err_code); 
        break;
+      case 69:
+       NRF_LOG_INFO("local proxy command (69)");
+       if(nao_write_data_len>1)
+        proxy_local_cmd(nao_write_data, nao_write_data_len);
     }
   
 }
@@ -1300,8 +1323,8 @@ int main(void)
     timer_init();
     create_timers();
 
-     err_code = app_timer_start(m_scheduler_timer_id, APP_TIMER_TICKS(200), NULL);
-     APP_ERROR_CHECK(err_code);
+    err_code = app_timer_start(m_scheduler_timer_id, APP_TIMER_TICKS(200), NULL);
+    APP_ERROR_CHECK(err_code);
 
     power_management_init();
     ble_stack_init();
@@ -1336,6 +1359,7 @@ int main(void)
     }
 
     // Enter main loop.
+    // Application is entirely event-driven, except timer-triggered housekeeping routine
     for (;;)
     {
         idle_state_handle();

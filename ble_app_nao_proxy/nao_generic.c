@@ -112,4 +112,32 @@ uint32_t cccd_configure(uint16_t conn_handle, uint16_t handle_cccd, bool enable)
 }
 
 
+uint32_t ble_nao_characteristic_write(uint16_t conn_handle, uint16_t char_tx_handle, uint8_t const *buffer, uint16_t buffer_len)
+{
+
+    if (conn_handle == BLE_CONN_HANDLE_INVALID)
+    {
+        return NRF_ERROR_INVALID_STATE;
+    }
+
+    NRF_LOG_DEBUG("writing char handle 0x%x on NAO\r\n", char_tx_handle);
+
+    tx_message_t * p_msg;
+
+    p_msg              = &m_tx_buffer[m_tx_insert_index++];
+    m_tx_insert_index &= TX_BUFFER_MASK;
+
+    p_msg->req.write_req.gattc_params.handle   = char_tx_handle;
+    p_msg->req.write_req.gattc_params.len      = buffer_len;
+    p_msg->req.write_req.gattc_params.p_value  = p_msg->req.write_req.gattc_value;
+    p_msg->req.write_req.gattc_params.offset   = 0;
+    p_msg->req.write_req.gattc_params.write_op = BLE_GATT_OP_WRITE_CMD;
+    p_msg->req.write_req.gattc_value[0]        = 0;
+    p_msg->conn_handle                         = conn_handle;
+    p_msg->type                                = WRITE_REQ;
+
+    tx_buffer_process();
+    return NRF_SUCCESS;
+}
+
 
