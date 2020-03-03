@@ -129,7 +129,7 @@ uint32_t ble_nao_characteristic_write(uint16_t conn_handle, uint16_t char_tx_han
 
     p_msg->req.write_req.gattc_params.handle   = char_tx_handle;
     p_msg->req.write_req.gattc_params.len      = buffer_len;
-    p_msg->req.write_req.gattc_params.p_value  = p_msg->req.write_req.gattc_value;
+    p_msg->req.write_req.gattc_params.p_value  = buffer;
     p_msg->req.write_req.gattc_params.offset   = 0;
     p_msg->req.write_req.gattc_params.write_op = BLE_GATT_OP_WRITE_CMD;
     p_msg->req.write_req.gattc_value[0]        = 0;

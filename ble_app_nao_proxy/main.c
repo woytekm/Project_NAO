@@ -206,13 +206,13 @@ static void housekeeping_timer_handler(void * p_context)
 
   if(NAO_pair_now)
    {
-    nrf_gpio_pin_toggle(MY_LED_3);
+    nrf_gpio_pin_toggle(MY_LED_3);  // flash led on proxy to indicate pairing window (press NAO knob briefly when proxy LED is flashing)
     NAO_pair_timer++;
    }
   else
    nrf_gpio_pin_clear(MY_LED_3); 
 
-  if(NAO_pair_timer>NAO_PAIR_TIMEOUT)
+  if(NAO_pair_timer>NAO_PAIR_TIMEOUT) // pairing unsuccessful - back to scanning
    {
     NAO_pair_now = false;
     NAO_pair_timer = 0;
@@ -345,6 +345,7 @@ static void ble_nao_conf_c_evt_handler(ble_nao_conf_c_t * p_ble_nao_conf_c, cons
 {
 
     uint32_t err_code;
+    uint8_t *data;
 
     NRF_LOG_INFO("ble_nao_conf_c_evt_handler: event: %X\r\n",p_ble_nao_conf_evt->evt_type);
 
@@ -363,7 +364,11 @@ static void ble_nao_conf_c_evt_handler(ble_nao_conf_c_t * p_ble_nao_conf_c, cons
             break;
 
         case BLE_NAO_CONF_C_EVT_NAO_CONF_RX_EVT:
+            data = p_ble_nao_conf_evt->p_data;
             NRF_LOG_INFO("Received packet from NAO+ service 0x09 (CONF), data len:%d\r\n",p_ble_nao_conf_evt->data_len);
+            NRF_LOG_INFO("bytes 0-5: %02x,%02x,%02x,%02x\r\n",data[0],data[1],data[2],data[3],data[4],data[5]);
+            err_code = ble_nao_stat_notif_forward(&m_nao_proxy, data, p_ble_nao_conf_evt->data_len);
+            NRF_LOG_INFO("forward notification returned: %d",err_code);
             break;
 
         case BLE_NAO_CONF_C_EVT_DISCONNECTED:
@@ -1203,7 +1208,7 @@ static void nao_write_handler(nao_proxy_t * p_lbs, uint8_t const *nao_write_data
     {
       case 0x09:
        NRF_LOG_INFO("write to service 09");
-       err_code =  ble_nao_characteristic_write(m_ble_nao_stat_c.conn_handle, m_ble_nao_stat_c.handles.nao_stat_tx_handle, data_buffer, nao_write_data_len - 1);
+       err_code =  ble_nao_characteristic_write(m_ble_nao_conf_c.conn_handle, m_ble_nao_conf_c.handles.nao_conf_tx_handle, data_buffer, nao_write_data_len - 1);
        APP_ERROR_CHECK(err_code);
        break;
       case 0x13:
@@ -1213,7 +1218,7 @@ static void nao_write_handler(nao_proxy_t * p_lbs, uint8_t const *nao_write_data
        break;
       case 0x68:
        NRF_LOG_INFO("write to service 68");
-       err_code =  ble_nao_characteristic_write(m_ble_nao_conf_c.conn_handle, m_ble_nao_conf_c.handles.nao_conf_tx_handle, data_buffer, nao_write_data_len - 1);
+       err_code =  ble_nao_characteristic_write(m_ble_nao_stat_c.conn_handle, m_ble_nao_stat_c.handles.nao_stat_tx_handle, data_buffer, nao_write_data_len - 1);
        APP_ERROR_CHECK(err_code); 
        break;
       case 69:
