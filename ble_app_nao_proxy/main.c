@@ -812,6 +812,13 @@ static void on_ble_peripheral_evt(ble_evt_t const * p_ble_evt)
 
             break;
 
+        case 38:
+            NRF_LOG_INFO("Central advertising timeout. Restart.");
+            err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+            APP_ERROR_CHECK(err_code);
+
+            break;
+
         case BLE_GAP_EVT_PHY_UPDATE_REQUEST:
         {
             NRF_LOG_DEBUG("PHY update request.");
