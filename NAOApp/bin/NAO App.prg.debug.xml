@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <pcToLineNum>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="3" lineNum="18" pc="268435456" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="4" lineNum="21" pc="268435461" symbol="add"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="4" lineNum="22" pc="268435465" symbol="add"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="4" lineNum="23" pc="268435501" symbol="add"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="4" lineNum="24" pc="268435521" symbol="add"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="4" lineNum="24" pc="268435533" symbol="add"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="4" lineNum="26" pc="268435553" symbol="add"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="30" pc="268435593" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="31" pc="268435597" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="32" pc="268435623" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="33" pc="268435633" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="34" pc="268435645" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="36" pc="268435649" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="37" pc="268435659" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="38" pc="268435681" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="39" pc="268435713" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="40" pc="268435741" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="41" pc="268435756" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="42" pc="268435788" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="43" pc="268435816" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="44" pc="268435851" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="45" pc="268435883" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="46" pc="268435898" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="47" pc="268435930" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="48" pc="268435991" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="49" pc="268436023" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="51" pc="268436084" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="52" pc="268436088" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="54" pc="268436100" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="56" pc="268436132" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="57" pc="268436136" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="60" pc="268436155" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="61" pc="268436181" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="62" pc="268436228" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="62" pc="268436233" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/CommQueue.mc" id="5" lineNum="63" pc="268436253" symbol="run"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="7" lineNum="10" pc="268436266" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="7" lineNum="11" pc="268436270" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="7" lineNum="12" pc="268436288" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="7" lineNum="13" pc="268436298" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="7" lineNum="14" pc="268436308" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="18" pc="268436319" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="19" pc="268436323" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="20" pc="268436336" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="21" pc="268436355" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="22" pc="268436370" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="24" pc="268436389" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="25" pc="268436427" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="26" pc="268436457" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="27" pc="268436476" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="29" pc="268436495" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="30" pc="268436533" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="31" pc="268436563" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="32" pc="268436582" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="33" pc="268436601" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="34" pc="268436630" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="35" pc="268436645" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="36" pc="268436664" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="37" pc="268436692" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="38" pc="268436721" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="39" pc="268436763" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="40" pc="268436811" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOMenuDelegate.mc" id="8" lineNum="41" pc="268436863" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="10" lineNum="12" pc="268436885" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="10" lineNum="13" pc="268436889" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="10" lineNum="14" pc="268436907" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="10" lineNum="15" pc="268436917" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="10" lineNum="16" pc="268436927" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="20" pc="268436938" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="21" pc="268436942" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="22" pc="268436958" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="23" pc="268436976" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="24" pc="268436994" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="25" pc="268437010" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="26" pc="268437028" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="27" pc="268437044" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="29" pc="268437066" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="11" lineNum="31" pc="268437086" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="34" pc="268437103" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="35" pc="268437107" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="36" pc="268437107" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="37" pc="268437128" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="39" pc="268437148" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="40" pc="268437161" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="41" pc="268437168" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="43" pc="268437178" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="44" pc="268437202" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="45" pc="268437215" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="47" pc="268437235" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="52" pc="268437280" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="53" pc="268437308" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="54" pc="268437329" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="55" pc="268437357" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="56" pc="268437373" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="57" pc="268437391" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="58" pc="268437422" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="59" pc="268437438" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="12" lineNum="60" pc="268437454" symbol="onScanResults"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="13" lineNum="66" pc="268437490" symbol="onDescriptorWrite"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="13" lineNum="67" pc="268437494" symbol="onDescriptorWrite"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="14" lineNum="70" pc="268437517" symbol="onCharacteristicWrite"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="14" lineNum="71" pc="268437521" symbol="onCharacteristicWrite"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="15" lineNum="74" pc="268437544" symbol="onCharacteristicRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="15" lineNum="75" pc="268437548" symbol="onCharacteristicRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="16" lineNum="78" pc="268437573" symbol="onDescriptorRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="16" lineNum="79" pc="268437577" symbol="onDescriptorRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="17" lineNum="82" pc="268437604" symbol="onCharacteristicChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOBleDelegate.mc" id="17" lineNum="83" pc="268437608" symbol="onCharacteristicChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="79" pc="268437697" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="80" pc="268437701" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="81" pc="268437719" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="82" pc="268437729" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="84" pc="268437739" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="86" pc="268437753" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="87" pc="268437786" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="87" pc="268437793" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="89" pc="268437806" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="20" lineNum="90" pc="268437840" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="21" lineNum="94" pc="268437882" symbol="onLayout"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="21" lineNum="95" pc="268437886" symbol="onLayout"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="21" lineNum="96" pc="268437905" symbol="onLayout"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="21" lineNum="97" pc="268437924" symbol="onLayout"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="21" lineNum="98" pc="268437946" symbol="onLayout"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="21" lineNum="99" pc="268437968" symbol="onLayout"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="22" lineNum="102" pc="268437996" symbol="onShow"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="106" pc="268438001" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="107" pc="268438005" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="108" pc="268438041" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="109" pc="268438053" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="111" pc="268438089" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="112" pc="268438127" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="113" pc="268438144" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="116" pc="268438161" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="117" pc="268438168" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="118" pc="268438196" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="119" pc="268438267" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="120" pc="268438293" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="123" pc="268438364" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="124" pc="268438402" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="127" pc="268438430" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="128" pc="268438480" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="130" pc="268438499" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="132" pc="268438499" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="133" pc="268438516" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="134" pc="268438532" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="135" pc="268438633" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="136" pc="268438677" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="138" pc="268438690" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="140" pc="268438710" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="142" pc="268438721" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="143" pc="268438783" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="144" pc="268438796" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="145" pc="268438820" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="146" pc="268438876" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="148" pc="268438889" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="149" pc="268438945" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="152" pc="268438958" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="152" pc="268438969" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="154" pc="268439043" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="158" pc="268439112" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="159" pc="268439129" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="23" lineNum="160" pc="268439165" symbol="onUpdate"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="165" pc="268439238" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="166" pc="268439242" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="167" pc="268439259" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="168" pc="268439278" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="169" pc="268439295" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="169" pc="268439321" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="173" pc="268439342" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="174" pc="268439398" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="178" pc="268439413" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="179" pc="268439430" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="183" pc="268439452" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="184" pc="268439469" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="185" pc="268439488" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="186" pc="268439505" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="187" pc="268439522" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="24" lineNum="190" pc="268439542" symbol="onTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="25" lineNum="195" pc="268439559" symbol="setNotify"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="25" lineNum="196" pc="268439563" symbol="setNotify"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="25" lineNum="197" pc="268439589" symbol="setNotify"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="25" lineNum="198" pc="268439663" symbol="setNotify"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="25" lineNum="199" pc="268439733" symbol="setNotify"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="26" lineNum="203" pc="268439737" symbol="startCommTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="26" lineNum="204" pc="268439741" symbol="startCommTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="27" lineNum="208" pc="268439758" symbol="stopCommTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="27" lineNum="209" pc="268439762" symbol="stopCommTimer"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="28" lineNum="213" pc="268439776" symbol="setError"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="28" lineNum="214" pc="268439780" symbol="setError"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="28" lineNum="215" pc="268439790" symbol="setError"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="29" lineNum="219" pc="268439807" symbol="hms"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="29" lineNum="220" pc="268439811" symbol="hms"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="29" lineNum="221" pc="268439821" symbol="hms"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="29" lineNum="222" pc="268439840" symbol="hms"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="29" lineNum="223" pc="268439850" symbol="hms"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="228" pc="268439906" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="229" pc="268439910" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="229" pc="268439922" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="231" pc="268439926" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="231" pc="268439938" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="232" pc="268439953" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="233" pc="268439965" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="235" pc="268439965" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="237" pc="268439988" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="30" lineNum="241" pc="268440011" symbol="doRequests"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="31" lineNum="245" pc="268440092" symbol="setService"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="31" lineNum="246" pc="268440096" symbol="setService"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="31" lineNum="247" pc="268440109" symbol="setService"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="31" lineNum="248" pc="268440148" symbol="setService"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="31" lineNum="248" pc="268440161" symbol="setService"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="32" lineNum="255" pc="268440189" symbol="initialComm"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="32" lineNum="256" pc="268440193" symbol="initialComm"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="32" lineNum="257" pc="268440203" symbol="initialComm"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="32" lineNum="259" pc="268440203" symbol="initialComm"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="32" lineNum="263" pc="268440218" symbol="initialComm"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="32" lineNum="264" pc="268440255" symbol="initialComm"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="33" lineNum="273" pc="268440337" symbol="handleDWrite"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="33" lineNum="274" pc="268440341" symbol="handleDWrite"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="34" lineNum="277" pc="268440362" symbol="handleCWrite"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="34" lineNum="278" pc="268440366" symbol="handleCWrite"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="282" pc="268440387" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="283" pc="268440391" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="284" pc="268440402" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="285" pc="268440409" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="286" pc="268440422" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="286" pc="268440437" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="287" pc="268440469" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="295" pc="268440518" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="296" pc="268440569" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="290" pc="268440575" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="290" pc="268440586" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="291" pc="268440599" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="292" pc="268440615" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="35" lineNum="299" pc="268440624" symbol="handleCRead"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="303" pc="268440645" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="304" pc="268440649" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="305" pc="268440667" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="306" pc="268440674" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="307" pc="268440681" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="308" pc="268440704" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="309" pc="268440717" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="310" pc="268440727" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="311" pc="268440747" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="312" pc="268440765" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="312" pc="268440772" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="313" pc="268440807" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="313" pc="268440812" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="314" pc="268440828" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="36" lineNum="316" pc="268440844" symbol="jsonToNum"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="321" pc="268440848" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="322" pc="268440852" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="323" pc="268440865" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="332" pc="268440914" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="333" pc="268440956" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="327" pc="268440962" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="327" pc="268440973" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="328" pc="268440986" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="329" pc="268441000" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="37" lineNum="335" pc="268441006" symbol="handleChanged"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="338" pc="268441023" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="340" pc="268441027" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="341" pc="268441040" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="341" pc="268441051" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="343" pc="268441057" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="344" pc="268441125" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="345" pc="268441193" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="346" pc="268441261" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="348" pc="268441329" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="349" pc="268441339" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="351" pc="268441358" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="352" pc="268441377" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="38" lineNum="353" pc="268441387" symbol="parseNAONotif"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="360" pc="268441398" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="361" pc="268441402" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="361" pc="268441413" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="362" pc="268441444" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="363" pc="268441454" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="364" pc="268441464" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="365" pc="268441474" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="367" pc="268441484" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="367" pc="268441497" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="368" pc="268441524" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="369" pc="268441533" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="371" pc="268441546" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="372" pc="268441555" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="373" pc="268441575" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="375" pc="268441588" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="376" pc="268441598" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="378" pc="268441626" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="379" pc="268441631" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="39" lineNum="381" pc="268441650" symbol="resetConnection"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOView.mc" id="40" lineNum="384" pc="268441667" symbol="onHide"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOPm.mc" id="42" lineNum="37" pc="268441672" symbol="registerProfiles"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOPm.mc" id="42" lineNum="38" pc="268441676" symbol="registerProfiles"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="44" lineNum="8" pc="268441704" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="44" lineNum="9" pc="268441708" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="44" lineNum="10" pc="268441726" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="44" lineNum="11" pc="268441736" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="44" lineNum="12" pc="268441746" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="45" lineNum="15" pc="268441757" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="45" lineNum="16" pc="268441761" symbol="onSelect"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="46" lineNum="19" pc="268441765" symbol="onBack"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="46" lineNum="20" pc="268441769" symbol="onBack"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="47" lineNum="23" pc="268441773" symbol="onMenu"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="47" lineNum="24" pc="268441777" symbol="onMenu"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="48" lineNum="27" pc="268441781" symbol="onPreviousPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="48" lineNum="28" pc="268441785" symbol="onPreviousPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="48" lineNum="29" pc="268441810" symbol="onPreviousPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="48" lineNum="29" pc="268441833" symbol="onPreviousPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="48" lineNum="30" pc="268441870" symbol="onPreviousPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="48" lineNum="31" pc="268441888" symbol="onPreviousPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="48" lineNum="32" pc="268441904" symbol="onPreviousPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="49" lineNum="35" pc="268441908" symbol="onNextPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="49" lineNum="36" pc="268441912" symbol="onNextPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="49" lineNum="37" pc="268441937" symbol="onNextPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="49" lineNum="37" pc="268441969" symbol="onNextPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="49" lineNum="38" pc="268441991" symbol="onNextPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="49" lineNum="39" pc="268442009" symbol="onNextPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAODelegate.mc" id="49" lineNum="40" pc="268442025" symbol="onNextPage"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="51" lineNum="12" pc="268442029" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="51" lineNum="13" pc="268442033" symbol="initialize"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="52" lineNum="16" pc="268442052" symbol="onStart"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="53" lineNum="19" pc="268442057" symbol="onStop"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="54" lineNum="22" pc="268442062" symbol="getInitialView"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="54" lineNum="23" pc="268442066" symbol="getInitialView"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="54" lineNum="24" pc="268442096" symbol="getInitialView"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="54" lineNum="25" pc="268442126" symbol="getInitialView"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="54" lineNum="26" pc="268442172" symbol="getInitialView"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="54" lineNum="27" pc="268442234" symbol="getInitialView"/>
+        <entry filename="/Users/wojtek/eclipse-workspace/NAO App/source/NAOApp.mc" id="54" lineNum="28" pc="268442252" symbol="getInitialView"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry field="true" id="85" symbol="NAO_PROXY_SERVICE"/>
+        <entry field="true" id="83" symbol="&lt;globals/NAOApp/&lt;&gt;view&gt;"/>
+        <entry field="true" id="99" symbol="isRunning"/>
+        <entry field="true" id="56" symbol="NAOLightIntensity"/>
+        <entry field="true" id="27" symbol="page2Key"/>
+        <entry field="true" id="18" symbol="queue"/>
+        <entry field="true" id="45" symbol="timer"/>
+        <entry field="true" id="58" symbol="gotNAOData"/>
+        <entry field="true" id="97" symbol="C_WRITENR"/>
+        <entry field="true" id="92" symbol="char"/>
+        <entry field="true" id="43" symbol="curErrorTimer"/>
+        <entry field="true" id="94" symbol="D_WRITE"/>
+        <entry id="64" method="true" symbol="stopCommTimer"/>
+        <entry id="63" method="true" symbol="startCommTimer"/>
+        <entry field="true" id="23" symbol="page"/>
+        <entry id="66" method="true" symbol="hms"/>
+        <entry field="true" id="36" symbol="displayTimer"/>
+        <entry field="true" id="96" symbol="C_WRITER"/>
+        <entry id="8391342" symbol="endianness"/>
+        <entry field="true" id="54" symbol="NAOBattLeft"/>
+        <entry field="true" id="35" symbol="degree"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="81" symbol="&lt;globals/NAOApp/&lt;&gt;bleDelegate&gt;"/>
+        <entry field="true" id="59" symbol="demoMode"/>
+        <entry field="true" id="57" symbol="deviceName"/>
+        <entry id="8391256" method="true" symbol="onScanResults"/>
+        <entry field="true" id="80" symbol="AppName"/>
+        <entry field="true" id="17" symbol="profileManager"/>
+        <entry id="15" object="true" symbol="NAOApp"/>
+        <entry id="8391262" method="true" symbol="onDescriptorWrite"/>
+        <entry id="73" method="true" symbol="jsonToNum"/>
+        <entry field="true" id="22" symbol="page2IsGPIO"/>
+        <entry id="9" object="true" symbol="CommQueue"/>
+        <entry id="8389080" method="true" symbol="onMenu"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry field="true" id="21" symbol="MAXSCREENS"/>
+        <entry id="8388942" method="true" symbol="add"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="8389081" method="true" symbol="onBack"/>
+        <entry field="true" id="20" symbol="REARLIGHT"/>
+        <entry id="8391340" symbol="descriptors"/>
+        <entry id="8391261" method="true" symbol="onDescriptorRead"/>
+        <entry id="65" method="true" symbol="setError"/>
+        <entry id="8391259" method="true" symbol="onCharacteristicRead"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry id="71" method="true" symbol="handleCWrite"/>
+        <entry field="true" id="29" symbol="commSetup"/>
+        <entry id="8391263" method="true" symbol="onCharacteristicChanged"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry field="true" id="8389348" symbol="font"/>
+        <entry field="true" id="8389067" symbol="height"/>
+        <entry id="8391258" method="true" symbol="onConnectedStateChanged"/>
+        <entry id="8389079" method="true" symbol="onPreviousPage"/>
+        <entry id="78" module="true" symbol="Menus"/>
+        <entry field="true" id="53" symbol="gpioInC2"/>
+        <entry field="true" id="52" symbol="gpioInC1"/>
+        <entry field="true" id="8389066" symbol="width"/>
+        <entry field="true" id="84" symbol="&lt;globals/NAOApp/&lt;&gt;queue&gt;"/>
+        <entry id="68" method="true" symbol="setService"/>
+        <entry field="true" id="31" symbol="paired"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="46" symbol="blank"/>
+        <entry id="74" method="true" symbol="handleChanged"/>
+        <entry field="true" id="34" symbol="sfH"/>
+        <entry field="true" id="48" symbol="c2"/>
+        <entry field="true" id="47" symbol="c1"/>
+        <entry field="true" id="93" symbol="D_READ"/>
+        <entry id="72" method="true" symbol="handleCRead"/>
+        <entry field="true" id="42" symbol="errorTimer"/>
+        <entry field="true" id="51" symbol="gpioOutC2"/>
+        <entry field="true" id="50" symbol="gpioOutC1"/>
+        <entry id="8391335" symbol="writeType"/>
+        <entry field="true" id="98" symbol="UPDATE"/>
+        <entry field="true" id="88" symbol="NAO_PROXY_NAME"/>
+        <entry id="100" method="true" symbol="run"/>
+        <entry id="10" object="true" symbol="NAOMenuDelegate"/>
+        <entry field="true" id="86" symbol="NAO_PROXY_READ"/>
+        <entry id="8391337" symbol="offset"/>
+        <entry field="true" id="49" symbol="piService"/>
+        <entry id="90" method="true" symbol="registerProfiles"/>
+        <entry field="true" id="32" symbol="deviceStatus"/>
+        <entry id="8389619" method="true" symbol="onSelect"/>
+        <entry field="true" id="39" symbol="ticks"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="26" symbol="scanning"/>
+        <entry id="69" method="true" symbol="initialComm"/>
+        <entry field="true" id="33" symbol="connected"/>
+        <entry field="true" id="44" symbol="errorMsg"/>
+        <entry field="true" id="28" symbol="curResult"/>
+        <entry id="91" method="true" symbol="&lt;globals/NAOBLEDelegate/&lt;&gt;contains&gt;"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry id="62" method="true" symbol="setNotify"/>
+        <entry id="13" object="true" symbol="NAOPM"/>
+        <entry field="true" id="79" symbol="LauncherIcon"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry field="true" id="19" symbol="BASEDATA"/>
+        <entry field="true" id="55" symbol="NAOBattVoltage"/>
+        <entry id="8391334" symbol="uuid"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry field="true" id="89" symbol="&lt;globals/NAOPM/&lt;&gt;NAOProfileDef&gt;"/>
+        <entry field="true" id="24" symbol="centerW"/>
+        <entry field="true" id="25" symbol="centerH"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry field="true" id="82" symbol="&lt;globals/NAOApp/&lt;&gt;profileManager&gt;"/>
+        <entry field="true" id="87" symbol="NAO_PROXY_WRITE"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry field="true" id="38" symbol="commDelay"/>
+        <entry field="true" id="16" symbol="view"/>
+        <entry field="true" id="40" symbol="commTimer"/>
+        <entry id="14" object="true" symbol="NAODelegate"/>
+        <entry field="true" id="37" symbol="requestTimer"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="11" object="true" symbol="NAOBLEDelegate"/>
+        <entry id="8391341" symbol="characteristics"/>
+        <entry id="75" method="true" symbol="parseNAONotif"/>
+        <entry id="76" method="true" symbol="resetConnection"/>
+        <entry field="true" id="30" symbol="device"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="77" module="true" symbol="Layouts"/>
+        <entry id="70" method="true" symbol="handleDWrite"/>
+        <entry field="true" id="60" symbol="gTestMode"/>
+        <entry id="8391260" method="true" symbol="onCharacteristicWrite"/>
+        <entry id="12" object="true" symbol="NAOView"/>
+        <entry field="true" id="95" symbol="C_READ"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry field="true" id="41" symbol="curCommTimer"/>
+        <entry id="8389078" method="true" symbol="onNextPage"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry id="61" method="true" symbol="onTimer"/>
+        <entry id="67" method="true" symbol="doRequests"/>
+    </symbolTable>
+    <localVars>
+        <entry endPc="268435593" name="view" stackId="1" startPc="268435461"/>
+        <entry endPc="268435593" name="uuid" stackId="3" startPc="268435461"/>
+        <entry endPc="268435593" name="data" stackId="2" startPc="268435461"/>
+        <entry endPc="268435753" name="cccd" stackId="3" startPc="268435713"/>
+        <entry endPc="268435848" name="cccd" stackId="4" startPc="268435788"/>
+        <entry endPc="268436265" name="autorun" stackId="5" startPc="268435597"/>
+        <entry endPc="268436265" name="char" stackId="2" startPc="268435597"/>
+        <entry endPc="268436266" name="view" stackId="1" startPc="268435593"/>
+        <entry endPc="268436319" name="v" stackId="2" startPc="268436266"/>
+        <entry endPc="268436319" name="pm" stackId="1" startPc="268436266"/>
+        <entry endPc="268436319" name="q" stackId="3" startPc="268436266"/>
+        <entry endPc="268436473" name="state" stackId="3" startPc="268436389"/>
+        <entry endPc="268436579" name="state" stackId="4" startPc="268436495"/>
+        <entry endPc="268436884" name="id" stackId="2" startPc="268436323"/>
+        <entry endPc="268436885" name="item" stackId="1" startPc="268436319"/>
+        <entry endPc="268436938" name="pm" stackId="1" startPc="268436885"/>
+        <entry endPc="268436938" name="q" stackId="3" startPc="268436885"/>
+        <entry endPc="268436938" name="topView" stackId="2" startPc="268436885"/>
+        <entry endPc="268437103" name="device" stackId="1" startPc="268436938"/>
+        <entry endPc="268437103" name="state" stackId="2" startPc="268436938"/>
+        <entry endPc="268437280" name="uuid" stackId="5" startPc="268437235"/>
+        <entry endPc="268437473" name="devUUIDs" stackId="4" startPc="268437148"/>
+        <entry endPc="268437489" name="result" stackId="3" startPc="268437148"/>
+        <entry endPc="268437489" name="devName" stackId="2" startPc="268437107"/>
+        <entry endPc="268437490" name="scanResults" stackId="1" startPc="268437103"/>
+        <entry endPc="268437517" name="status" stackId="2" startPc="268437490"/>
+        <entry endPc="268437517" name="desc" stackId="1" startPc="268437490"/>
+        <entry endPc="268437544" name="status" stackId="2" startPc="268437517"/>
+        <entry endPc="268437544" name="char" stackId="1" startPc="268437517"/>
+        <entry endPc="268437573" name="status" stackId="2" startPc="268437544"/>
+        <entry endPc="268437573" name="char" stackId="1" startPc="268437544"/>
+        <entry endPc="268437573" name="value" stackId="3" startPc="268437544"/>
+        <entry endPc="268437604" name="status" stackId="2" startPc="268437573"/>
+        <entry endPc="268437604" name="value" stackId="3" startPc="268437573"/>
+        <entry endPc="268437604" name="desc" stackId="1" startPc="268437573"/>
+        <entry endPc="268437631" name="char" stackId="1" startPc="268437604"/>
+        <entry endPc="268437631" name="value" stackId="2" startPc="268437604"/>
+        <entry endPc="268437693" name="uuid" stackId="3" startPc="268437655"/>
+        <entry endPc="268437697" name="iter" stackId="1" startPc="268437631"/>
+        <entry endPc="268437697" name="obj" stackId="2" startPc="268437631"/>
+        <entry endPc="268437881" name="cfg" stackId="3" startPc="268437701"/>
+        <entry endPc="268437882" name="pm" stackId="1" startPc="268437697"/>
+        <entry endPc="268437882" name="q" stackId="2" startPc="268437697"/>
+        <entry endPc="268437996" name="dc" stackId="1" startPc="268437882"/>
+        <entry endPc="268439040" name="str2" stackId="5" startPc="268438721"/>
+        <entry endPc="268439237" name="time" stackId="4" startPc="268438005"/>
+        <entry endPc="268439237" name="str" stackId="3" startPc="268438005"/>
+        <entry endPc="268439237" name="y" stackId="2" startPc="268438005"/>
+        <entry endPc="268439238" name="dc" stackId="1" startPc="268438001"/>
+        <entry endPc="268439736" name="toDo" stackId="5" startPc="268439563"/>
+        <entry endPc="268439736" name="char" stackId="4" startPc="268439563"/>
+        <entry endPc="268439737" name="service" stackId="1" startPc="268439559"/>
+        <entry endPc="268439737" name="on" stackId="3" startPc="268439559"/>
+        <entry endPc="268439737" name="thisOne" stackId="2" startPc="268439559"/>
+        <entry endPc="268439807" name="msg" stackId="1" startPc="268439776"/>
+        <entry endPc="268439905" name="m" stackId="3" startPc="268439811"/>
+        <entry endPc="268439905" name="s" stackId="4" startPc="268439811"/>
+        <entry endPc="268439905" name="h" stackId="2" startPc="268439811"/>
+        <entry endPc="268439906" name="secs" stackId="1" startPc="268439807"/>
+        <entry endPc="268440091" name="char" stackId="1" startPc="268439910"/>
+        <entry endPc="268440336" name="char" stackId="1" startPc="268440193"/>
+        <entry endPc="268440362" name="status" stackId="2" startPc="268440337"/>
+        <entry endPc="268440362" name="desc" stackId="1" startPc="268440337"/>
+        <entry endPc="268440387" name="status" stackId="2" startPc="268440362"/>
+        <entry endPc="268440387" name="char" stackId="1" startPc="268440362"/>
+        <entry endPc="268440469" name="i" stackId="6" startPc="268440437"/>
+        <entry endPc="268440621" name="sz" stackId="5" startPc="268440402"/>
+        <entry endPc="268440621" name="str" stackId="4" startPc="268440402"/>
+        <entry endPc="268440645" name="status" stackId="2" startPc="268440387"/>
+        <entry endPc="268440645" name="char" stackId="1" startPc="268440387"/>
+        <entry endPc="268440645" name="value" stackId="3" startPc="268440387"/>
+        <entry endPc="268440847" name="x" stackId="5" startPc="268440649"/>
+        <entry endPc="268440847" name="i" stackId="4" startPc="268440649"/>
+        <entry endPc="268440848" name="isFloat" stackId="3" startPc="268440645"/>
+        <entry endPc="268440848" name="sz" stackId="2" startPc="268440645"/>
+        <entry endPc="268440848" name="str" stackId="1" startPc="268440645"/>
+        <entry endPc="268441022" name="sz" stackId="3" startPc="268440852"/>
+        <entry endPc="268441023" name="char" stackId="1" startPc="268440848"/>
+        <entry endPc="268441023" name="value" stackId="2" startPc="268440848"/>
+        <entry endPc="268441397" name="intensity" stackId="5" startPc="268441027"/>
+        <entry endPc="268441397" name="msg_len" stackId="2" startPc="268441027"/>
+        <entry endPc="268441397" name="voltage_conv" stackId="8" startPc="268441027"/>
+        <entry endPc="268441397" name="batt_left_units" stackId="4" startPc="268441027"/>
+        <entry endPc="268441397" name="percent_left" stackId="7" startPc="268441027"/>
+        <entry endPc="268441397" name="voltage" stackId="6" startPc="268441027"/>
+        <entry endPc="268441397" name="msg_type" stackId="3" startPc="268441027"/>
+        <entry endPc="268441398" name="notif_data" stackId="1" startPc="268441023"/>
+        <entry endPc="268441667" name="doClear" stackId="1" startPc="268441398"/>
+        <entry endPc="268441757" name="v" stackId="2" startPc="268441704"/>
+        <entry endPc="268441757" name="pm" stackId="1" startPc="268441704"/>
+        <entry endPc="268441757" name="q" stackId="3" startPc="268441704"/>
+        <entry endPc="268442057" name="state" stackId="1" startPc="268442052"/>
+        <entry endPc="268442062" name="state" stackId="1" startPc="268442057"/>
+    </localVars>
+    <annotations/>
+    <dataEntryOffsetMappings>
+        <dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
+        <dataEntry offset="190" parentId="globals" symbolId="NAODelegate" type="class"/>
+        <dataEntry offset="301" parentId="globals" symbolId="NAOView" type="class"/>
+        <dataEntry offset="884" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry offset="963" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry offset="1002" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry offset="1033" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry offset="1064" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry offset="1095" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry offset="1126" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry offset="1165" parentId="globals" symbolId="NAOApp" type="class"/>
+        <dataEntry offset="1268" parentId="globals" symbolId="NAOPM" type="class"/>
+        <dataEntry offset="1363" parentId="globals" symbolId="NAOBLEDelegate" type="class"/>
+        <dataEntry offset="1498" parentId="globals" symbolId="NAOMenuDelegate" type="class"/>
+        <dataEntry offset="1585" parentId="globals" symbolId="CommQueue" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" name="initialize" parent="CommQueue">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="add" parent="CommQueue">
+            <param id="view"/>
+            <param id="data"/>
+            <param id="uuid"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="run" parent="CommQueue">
+            <param id="view"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="NAOMenuDelegate">
+            <param id="pm"/>
+            <param id="v"/>
+            <param id="q"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onSelect" parent="NAOMenuDelegate">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="NAOBLEDelegate">
+            <param id="pm"/>
+            <param id="topView"/>
+            <param id="q"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onConnectedStateChanged" parent="NAOBLEDelegate">
+            <param id="device"/>
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onScanResults" parent="NAOBLEDelegate">
+            <param id="scanResults"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onDescriptorWrite" parent="NAOBLEDelegate">
+            <param id="desc"/>
+            <param id="status"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onCharacteristicWrite" parent="NAOBLEDelegate">
+            <param id="char"/>
+            <param id="status"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onCharacteristicRead" parent="NAOBLEDelegate">
+            <param id="char"/>
+            <param id="status"/>
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onDescriptorRead" parent="NAOBLEDelegate">
+            <param id="desc"/>
+            <param id="status"/>
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onCharacteristicChanged" parent="NAOBLEDelegate">
+            <param id="char"/>
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" name="&lt;globals/NAOBLEDelegate/&lt;&gt;contains&gt;" parent="NAOBLEDelegate">
+            <param id="iter"/>
+            <param id="obj"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="NAOView">
+            <param id="pm"/>
+            <param id="q"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onLayout" parent="NAOView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onShow" parent="NAOView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onUpdate" parent="NAOView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onTimer" parent="NAOView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="setNotify" parent="NAOView">
+            <param id="service"/>
+            <param id="thisOne"/>
+            <param id="on"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="startCommTimer" parent="NAOView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="stopCommTimer" parent="NAOView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="setError" parent="NAOView">
+            <param id="msg"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="hms" parent="NAOView">
+            <param id="secs"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="doRequests" parent="NAOView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="setService" parent="NAOView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialComm" parent="NAOView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="handleDWrite" parent="NAOView">
+            <param id="desc"/>
+            <param id="status"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="handleCWrite" parent="NAOView">
+            <param id="char"/>
+            <param id="status"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="handleCRead" parent="NAOView">
+            <param id="char"/>
+            <param id="status"/>
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="jsonToNum" parent="NAOView">
+            <param id="str"/>
+            <param id="sz"/>
+            <param id="isFloat"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="handleChanged" parent="NAOView">
+            <param id="char"/>
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="parseNAONotif" parent="NAOView">
+            <param id="notif_data"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="resetConnection" parent="NAOView">
+            <param id="doClear"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onHide" parent="NAOView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="registerProfiles" parent="NAOPM">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="NAODelegate">
+            <param id="pm"/>
+            <param id="v"/>
+            <param id="q"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onSelect" parent="NAODelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onBack" parent="NAODelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onMenu" parent="NAODelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onPreviousPage" parent="NAODelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onNextPage" parent="NAODelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="NAOApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="NAOApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="NAOApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getInitialView" parent="NAOApp">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>
