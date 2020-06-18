@@ -1215,18 +1215,33 @@ static void nao_write_handler(nao_proxy_t * p_lbs, uint8_t const *nao_write_data
     {
       case 0x09:
        NRF_LOG_INFO("write to service 09");
-       err_code =  ble_nao_characteristic_write(m_ble_nao_conf_c.conn_handle, m_ble_nao_conf_c.handles.nao_conf_tx_handle, data_buffer, nao_write_data_len - 1);
-       APP_ERROR_CHECK(err_code);
+       if(m_conn_handle_nao_c != BLE_CONN_HANDLE_INVALID)
+        {
+         err_code =  ble_nao_characteristic_write(m_ble_nao_conf_c.conn_handle, m_ble_nao_conf_c.handles.nao_conf_tx_handle, data_buffer, nao_write_data_len - 1);
+         APP_ERROR_CHECK(err_code);
+        }
+       else
+        NRF_LOG_INFO("cannot write - NAO not connected");
        break;
       case 0x13:
        NRF_LOG_INFO("write to service 13");
-       err_code =  ble_nao_characteristic_write(m_ble_nao_auth_c.conn_handle, m_ble_nao_auth_c.handles.nao_auth_tx_handle, data_buffer, nao_write_data_len - 1);
-       APP_ERROR_CHECK(err_code);
+       if(m_conn_handle_nao_c != BLE_CONN_HANDLE_INVALID)
+        {
+         err_code =  ble_nao_characteristic_write(m_ble_nao_auth_c.conn_handle, m_ble_nao_auth_c.handles.nao_auth_tx_handle, data_buffer, nao_write_data_len - 1);
+         APP_ERROR_CHECK(err_code);
+        }
+       else
+        NRF_LOG_INFO("cannot write - NAO not connected");       
        break;
       case 0x68:
        NRF_LOG_INFO("write to service 68");
-       err_code =  ble_nao_characteristic_write(m_ble_nao_stat_c.conn_handle, m_ble_nao_stat_c.handles.nao_stat_tx_handle, data_buffer, nao_write_data_len - 1);
-       APP_ERROR_CHECK(err_code); 
+       if(m_conn_handle_nao_c != BLE_CONN_HANDLE_INVALID)
+        {
+         err_code =  ble_nao_characteristic_write(m_ble_nao_stat_c.conn_handle, m_ble_nao_stat_c.handles.nao_stat_tx_handle, data_buffer, nao_write_data_len - 1);
+         APP_ERROR_CHECK(err_code);
+        }
+       else
+        NRF_LOG_INFO("cannot write - NAO not connected");
        break;
       case 69:
        NRF_LOG_INFO("local proxy command (69)");
