@@ -1,0 +1,129 @@
+
+---
+Error: Symbol Not Found Error
+Details: "Could not find symbol 'print'"
+Time: 2020-06-17T06:25:49Z
+Part-Number: 006-B3291-00
+Firmware-Version: '9.00'
+Language-Code: eng
+ConnectIQ-Version: 3.1.8
+Filename: NAODF
+Appname: NAO_App
+Stack: 
+  - pc: 0x10001e31
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOBleDelegate.mc'
+    Line: 47
+    Function: onScanResults
+---
+Error: Symbol Not Found Error
+Details: "Could not find symbol 'print'"
+Time: 2020-06-17T06:28:04Z
+Part-Number: 006-B3291-00
+Firmware-Version: '9.00'
+Language-Code: eng
+ConnectIQ-Version: 3.1.8
+Filename: NAODF
+Appname: NAO_App
+Stack: 
+  - pc: 0x10001e31
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOBleDelegate.mc'
+    Line: 47
+    Function: onScanResults
+---
+Error: Symbol Not Found Error
+Details: "Could not find symbol 'char'"
+Time: 2020-06-18T19:50:09Z
+Part-Number: 006-B3291-00
+Firmware-Version: '9.00'
+Language-Code: eng
+ConnectIQ-Version: 3.1.8
+Filename: NAODF
+Appname: NAO_App
+Stack: 
+  - pc: 0x100012f0
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 495
+    Function: NAOCommsSetup
+  - pc: 0x10001295
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 482
+    Function: initialComm
+  - pc: 0x1000118c
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 454
+    Function: doRequests
+  - pc: 0x10000f23
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 392
+    Function: onTimer
+---
+Error: Symbol Not Found Error
+Details: "Could not find symbol 'char'"
+Time: 2020-06-18T19:50:19Z
+Part-Number: 006-B3291-00
+Firmware-Version: '9.00'
+Language-Code: eng
+ConnectIQ-Version: 3.1.8
+Filename: NAODF
+Appname: NAO_App
+Stack: 
+  - pc: 0x100012f0
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 495
+    Function: NAOCommsSetup
+  - pc: 0x10001295
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 482
+    Function: initialComm
+  - pc: 0x1000118c
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 454
+    Function: doRequests
+  - pc: 0x10000f23
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 392
+    Function: onTimer
+---
+Error: Unhandled Exception
+Time: 2020-06-18T20:22:20Z
+Part-Number: 006-B3291-00
+Firmware-Version: '9.00'
+Language-Code: eng
+ConnectIQ-Version: 3.1.8
+Filename: NAODF
+Appname: NAO_App
+Stack: 
+  - pc: 0x100017df
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 587
+    Function: parseNAONotif
+  - pc: 0x10001791
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 569
+    Function: handleChanged
+  - pc: 0x10001e4f
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOBleDelegate.mc'
+    Line: 83
+    Function: onCharacteristicChanged
+---
+Error: Unhandled Exception
+Time: 2020-06-18T20:22:31Z
+Part-Number: 006-B3291-00
+Firmware-Version: '9.00'
+Language-Code: eng
+ConnectIQ-Version: 3.1.8
+Filename: NAODF
+Appname: NAO_App
+Stack: 
+  - pc: 0x100017df
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 587
+    Function: parseNAONotif
+  - pc: 0x10001791
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOView.mc'
+    Line: 569
+    Function: handleChanged
+  - pc: 0x10001e4f
+    File: '/Users/wojtek/eclipse-workspace/NAOMonitor/source/NAOBleDelegate.mc'
+    Line: 83
+    Function: onCharacteristicChanged

@@ -10,5 +10,5 @@ This project has four parts:
  - BLE proxy hardware - miniature device which you can put in your pocket or backpack when hiking/running/doing whaveter else with your head lamp on.
  - Garmin ConnectIQ app monitoring NAO+ via BLE proxy
 
-Project is in progress. Proxy code (hardest part) is almost ready, hardware is not designed yet (currently i'm working with dev board), As seen on the above photo - ConnectIQ app is in progress!
+Project is in progress. Proxy code (hardest part) is almost ready, hardware is not designed yet (currently i'm working with dev board), ConnectIQ app seen on above photo is halfway there.
 
