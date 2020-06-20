@@ -44,7 +44,7 @@ class NAOBLEDelegate extends Ble.BleDelegate {
             var devUUIDs = result.getServiceUuids();
             for(var uuid = devUUIDs.next(); uuid != null; uuid = devUUIDs.next())
              {
-               print("    UUID: "+uuid.toString());                  
+               Sys.println("    UUID: "+uuid.toString());                  
              }
         
              

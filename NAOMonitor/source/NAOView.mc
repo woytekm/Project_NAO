@@ -19,7 +19,7 @@ enum {
 	BASEDATA,
 	REARLIGHT,
 	MAXSCREENS
-}
+    }
 
 	var page2IsGPIO=true;
 	
@@ -54,6 +54,7 @@ enum {
 	var commDelay=0;
 	var notifDataTimeout = 0;
 	var redFlip = 0;
+	var redToggle = 0;
 
 	var ticks=0;
 	
@@ -79,6 +80,7 @@ enum {
 	var gotNAOData=false;
 	var NAOProfileName1 = "";
 	var NAOProfileName2 = "";	
+	
 	
 	//gpio demo mode settings
 	var demoMode=false;

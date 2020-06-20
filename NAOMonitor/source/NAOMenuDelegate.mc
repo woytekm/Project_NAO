@@ -17,28 +17,47 @@ class NAOMenuDelegate extends Ui.Menu2InputDelegate {
 	//function onMenuItem(item) {
     function onSelect(item) {
     	var id=item.getId();
-    	if(id.equals("eToggle")) {
-			onBack();
-    	} else if( id.equals("outC1") ) {
-    	    //C1
-    		var state = view.gpioOutC1==1 ? 0 : 1;
-    		item.setEnabled(state==1 ? true : false);
-			view.gpioOutC1=state;
-    	} else if( id.equals("outC2") ) {
-    		//C2
-    		var state = view.gpioOutC2==1 ? 0 : 1;
-    		item.setEnabled(state==1 ? true : false);
-			view.gpioOutC2=state;
-    	} else if (id.equals("demo")) {
-    		view.demoMode=!view.demoMode;
-			onBack();
-    	} else if(id.equals("page2")) {
-    		view.page=view.REARLIGHT;
-  			view.page2IsGPIO=!view.page2IsGPIO;
-			item.setLabel((view.page2IsGPIO) ? "GPIO" : "Enviro");    	
-  			item.setSubLabel("Change to "+((view.page2IsGPIO) ? "Enviro" :"GPIO"));	
-  			Application.Storage.setValue(view.page2Key, view.page2IsGPIO);
-  			view.doRequests();	
-    	}   	
+    	
+    	var NAOService = view.device.getService(profileManager.NAO_PROXY_SERVICE);
+		var NAOWRChar = NAOService.getCharacteristic(profileManager.NAO_PROXY_WRITE);
+		 
+    	if(id.equals("toggleRed")) 
+    	{
+    	 Sys.println("Sending toggle red");
+    	 var setNAOConf730300 = [0x09,0x74,0x03,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00]b; // rear light status
+    	 var setNAOConf730301 = [0x09,0x74,0x03,0x01,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00]b; // rear light status
+    	 var setNAOConf730302 = [0x09,0x74,0x03,0x01,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00]b; // rear light status
+    	 var setNAOConf730303 = [0x09,0x74,0x03,0x01,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00]b; // rear light status
+    	 
+    	 if(view.redToggle == 0)
+    	  {
+  		   queue.add(view,[NAOWRChar,queue.C_WRITER,setNAOConf730301],profileManager.NAO_PROXY_WRITE);
+  		   view.redToggle++;
+  		  }
+  		 else if(view.redToggle == 1)
+    	  {
+  		   queue.add(view,[NAOWRChar,queue.C_WRITER,setNAOConf730302],profileManager.NAO_PROXY_WRITE);
+  		   view.redToggle++;
+  		  }
+  		 else if(view.redToggle == 2)
+    	  {
+  		   queue.add(view,[NAOWRChar,queue.C_WRITER,setNAOConf730303],profileManager.NAO_PROXY_WRITE);
+  		   view.redToggle++;
+  		  }
+  		 else if(view.redToggle == 3)
+    	  {
+  		   queue.add(view,[NAOWRChar,queue.C_WRITER,setNAOConf730300],profileManager.NAO_PROXY_WRITE);
+  		   view.redToggle = 0;
+  		  }
+  		  
+  		 view.NAORefreshData();
+  		  
+    	} 
+    	else if(id.equals("clearBond")) 
+    	{    	
+    	 Sys.println("Sending clear bond");
+         var setProxyRemoveBond = [0x69,0x11]b;
+         queue.add(view,[NAOWRChar,queue.C_WRITER,setProxyRemoveBond],profileManager.NAO_PROXY_WRITE);
+        }
     }
 }

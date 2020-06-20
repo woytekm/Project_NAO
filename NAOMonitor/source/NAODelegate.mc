@@ -21,6 +21,16 @@ class NAODelegate extends Ui.BehaviorDelegate {
     }
     
     function onMenu() {
+           if(view.connected)
+            {
+            var myMenu=new Ui.Menu2({});
+			if(view.page==view.BASEDATA) {
+				myMenu.setTitle("NAO funcs") ; 
+		    	myMenu.addItem(new Ui.MenuItem("toggle red",null,"toggleRed",null));
+	      	    myMenu.addItem(new Ui.MenuItem("clear proxy bond",null,"clearBond",null));
+		   		}		            			
+				Ui.pushView(myMenu, new NAOMenuDelegate(profileManager,view,queue), Ui.SLIDE_IMMEDIATE);  			
+			}
 		return true;	    
     }
     
