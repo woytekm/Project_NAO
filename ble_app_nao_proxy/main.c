@@ -1194,9 +1194,23 @@ void pm_peer_delete_all(void)
 
 uint32_t proxy_local_cmd(uint8_t const *nao_write_data, uint16_t nao_write_data_len)
  {
-   // CMD 0x0: erase bonds, restart
-   // CMD 0x1: set NAO name (write setting to flash, erase bonds, restart)
-   // CMD 0x2: default NAO name (erase setting from flash, restart and let application use default name PETZL_NAO+_0100)
+   // CMD 0x11: erase bonds, restart
+   // CMD 0x22: set NAO name (write setting to flash, erase bonds, restart)
+   // CMD 0x33: default NAO name (erase setting from flash, restart and let application use default name PETZL_NAO+_0100)
+   switch(nao_write_data[1])
+    {
+     case 0x11:
+       NRF_LOG_INFO("Local command 0x11 - delete all peers and restart");
+       pm_peer_delete_all();
+       NVIC_SystemReset();
+       break;
+     case 0x22:
+       NRF_LOG_INFO("Local command 0x22");
+       break;
+     case 0x33:
+       NRF_LOG_INFO("Local command 0x33");
+       break;
+    }
    return NRF_SUCCESS;
  }
 
@@ -1243,7 +1257,7 @@ static void nao_write_handler(nao_proxy_t * p_lbs, uint8_t const *nao_write_data
        else
         NRF_LOG_INFO("cannot write - NAO not connected");
        break;
-      case 69:
+      case 0x69:
        NRF_LOG_INFO("local proxy command (69)");
        if(nao_write_data_len>1)
         proxy_local_cmd(nao_write_data, nao_write_data_len);
@@ -1362,7 +1376,7 @@ int main(void)
     NAO_register_UUIDs();
     db_discovery_init();
     peer_manager_init();
-    pm_peer_delete_all(); 
+    // pm_peer_delete_all(); 
  
     nao_auth_c_init();   
     nao_stat_c_init();
