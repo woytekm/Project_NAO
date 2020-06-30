@@ -107,8 +107,9 @@
 #define HART_RATE_SERVICE_UUID_IDX      0                                           /**< Hart Rate service UUID index in array. */
 #define RSCS_SERVICE_UUID_IDX           1                                           /**< RSCS service UUID index in array. */
 
-#define CONFIG_BUF_LEN                  256
-#define USERBLOCK                      0x60000
+#define CONFIG_BUF_LEN                  64
+#define CONFIG_FILE_ID                  0x11
+#define CONFIG_REC_KEY                  0x22
 
 /**@brief   Priority of the application BLE event handler.
  * @note    You shouldn't need to modify this value.
@@ -160,6 +161,8 @@ static ble_nao_conf_c_t              m_ble_nao_conf_c;
 static char m_default_periph_name[MAXNAME] = "NAO+_0100";
 static char m_target_periph_name[MAXNAME] = ""; // NAO+_0100 is the default
 
+uint8_t m_config_data[CONFIG_BUF_LEN] = {0x00};
+
 nrf_fstorage_api_t *m_fs_api;
 
 /**@brief UUIDs that the central application scans for if the name above is set to an empty string,
@@ -204,66 +207,37 @@ static ble_gap_scan_params_t m_scan_param =                 /**< Scan parameters
 };
 
 
-static void fstorage_evt_handler(nrf_fstorage_evt_t * p_evt);
 static void idle_state_handle(void);
 
-NRF_FSTORAGE_DEF(nrf_fstorage_t fstorage) =
+
+static void my_fds_evt_handler(fds_evt_t const * const p_fds_evt)
 {
-    /* Set a handler for fstorage events. */
-    .evt_handler = fstorage_evt_handler,
-
-    /* These below are the boundaries of the flash space assigned to this instance of fstorage.
-     * You must set these manually, even at runtime, before nrf_fstorage_init() is called.
-     * The function nrf5_flash_end_addr_get() can be used to retrieve the last address on the
-     * last page of flash available to write data. */
-    .start_addr = 0x000FC000,
-    .end_addr   = 0x000FE000,
-};
-
-void wait_for_flash_ready(nrf_fstorage_t const * p_fstorage)
-{
-    /* While fstorage is busy, sleep and wait for an event. */
-    while (nrf_fstorage_is_busy(p_fstorage))
+    switch (p_fds_evt->id)
     {
-        idle_state_handle();
-    }
-}
-
-static void fstorage_evt_handler(nrf_fstorage_evt_t * p_evt)
-{
-    if (p_evt->result != NRF_SUCCESS)
-    {
-        NRF_LOG_INFO("--> Event received: ERROR while executing an fstorage operation (%d).",p_evt->result);
-        return;
-    }
-
-    switch (p_evt->id)
-    {
-        case NRF_FSTORAGE_EVT_WRITE_RESULT:
-        {
-            NRF_LOG_INFO("--> Event received: wrote %d bytes at address 0x%x.",
-                         p_evt->len, p_evt->addr);
-        } break;
-
-        case NRF_FSTORAGE_EVT_ERASE_RESULT:
-        {
-            NRF_LOG_INFO("--> Event received: erased %d page from address 0x%x.",
-                         p_evt->len, p_evt->addr);
-        } break;
-
+        case FDS_EVT_INIT:
+            if (p_fds_evt->result != NRF_SUCCESS)
+            {
+             NRF_LOG_INFO("FDS init failed.");           
+            }
+            break;
+         case FDS_EVT_WRITE:
+   	    if (p_fds_evt->result == NRF_SUCCESS)
+   	     {
+              NRF_LOG_INFO("FDS write ok.");
+   	     }
+  	    break;
         default:
+            NRF_LOG_INFO("FDS event: %d",p_fds_evt->id);
             break;
     }
 }
 
-void fstorage_init()
+void my_fds_init()
  {
-
-   uint8_t rc;
-   m_fs_api = &nrf_fstorage_sd;
-   rc = nrf_fstorage_init(&fstorage, m_fs_api, NULL);
-   APP_ERROR_CHECK(rc);
-
+   ret_code_t ret = fds_register(my_fds_evt_handler);
+   APP_ERROR_CHECK(ret);
+   ret = fds_init();
+   APP_ERROR_CHECK(ret);
  }
 
 
@@ -292,38 +266,68 @@ void apply_config(char *config_buffer)
 
 void read_cfg_from_flash()
  {
-
-  uint16_t len;
   uint8_t rc;
+  fds_flash_record_t  flash_record;
+  fds_record_desc_t   record_desc;
+  fds_find_token_t    ftok;
 
-  uint8_t fstorage_data[CONFIG_BUF_LEN] = {0};
+  uint8_t config_data[CONFIG_BUF_LEN] = {0x00};
 
-  rc = nrf_fstorage_read(&fstorage, fstorage.start_addr, fstorage_data, CONFIG_BUF_LEN);
+  memset(&ftok, 0x00, sizeof(fds_find_token_t));
 
-  if (rc != NRF_SUCCESS)
+  while (fds_record_find(CONFIG_FILE_ID, CONFIG_REC_KEY, &record_desc, &ftok) == NRF_SUCCESS)
    {
-     NRF_LOG_INFO("error, nrf_fstorage_read returned: %s\n",nrf_strerror_get(rc));
-     return;
+    rc = fds_record_open(&record_desc, &flash_record);
+    APP_ERROR_CHECK(rc);
+
+    memcpy(config_data,flash_record.p_data,CONFIG_BUF_LEN);
+
+    NRF_LOG_INFO("readed FDS record: %X, id: %d",(char *)flash_record.p_data,record_desc.record_id);     
+
+    rc = fds_record_close(&record_desc);
+    APP_ERROR_CHECK(rc);
+
    }
 
-  apply_config((char *)fstorage_data);
- 
-
+  apply_config((char *)config_data);
  }
 
 
-void write_cfg_to_flash()
+uint8_t write_cfg_to_flash()
  {
    uint8_t rc;
 
-   uint8_t fstorage_data[CONFIG_BUF_LEN] = {0};
+   fds_record_t        record;
+   fds_record_desc_t   record_desc_del;
+   fds_record_desc_t   record_desc_add;
 
-   build_config((char *)fstorage_data);
-   rc = nrf_fstorage_erase(&fstorage, fstorage.start_addr, 1, NULL); 
-   APP_ERROR_CHECK(rc);
-   rc = nrf_fstorage_write(&fstorage, fstorage.start_addr, &fstorage_data, CONFIG_BUF_LEN, NULL);
-   APP_ERROR_CHECK(rc);
-   wait_for_flash_ready(&fstorage);
+
+   build_config((char *)m_config_data);
+
+   record.file_id              = CONFIG_FILE_ID;
+   record.key          	       = CONFIG_REC_KEY;
+   record.data.p_data          = &m_config_data;
+   record.data.length_words    = CONFIG_BUF_LEN/4;
+
+   fds_find_token_t    ftok;
+   memset(&ftok, 0x00, sizeof(fds_find_token_t));
+   while (fds_record_find(CONFIG_FILE_ID, CONFIG_REC_KEY, &record_desc_del, &ftok) == NRF_SUCCESS)
+   {
+     fds_record_delete(&record_desc_del);
+     fds_gc();
+     NRF_LOG_INFO("Erasing Record ID = %d",record_desc_del.record_id);
+   }
+
+   ret_code_t ret = fds_record_write(&record_desc_add, &record);
+
+   if (ret != NRF_SUCCESS)
+    {
+	APP_ERROR_CHECK(ret);
+    }
+
+    NRF_LOG_INFO("Writing Record ID = %d, data= %s",record_desc_add.record_id,record.data.p_data);
+    return NRF_SUCCESS;
+ 
  }
 
 
@@ -661,6 +665,12 @@ static void scan_start(void)
 }
 
 
+static void scan_stop(void)
+{
+    nrf_ble_scan_stop();
+}
+
+
 /**@brief Function for initializing the advertising and the scanning.
  */
 static void adv_scan_start(void)
@@ -672,7 +682,7 @@ static void adv_scan_start(void)
     {
         // Start scanning for peripherals and initiate connection to devices which
         // advertise Heart Rate or Running speed and cadence UUIDs.
-        scan_start();
+        // scan_start();
 
         // Turn on the LED to signal scanning.
 
@@ -839,7 +849,7 @@ static void on_ble_central_evt(ble_evt_t const * p_ble_evt)
             if (m_conn_handle_nao_c == BLE_CONN_HANDLE_INVALID)
             {
                 // Start scanning.
-                scan_start();
+                //scan_start();
 
                 // Update LEDs status.
             }
@@ -929,6 +939,10 @@ static void on_ble_peripheral_evt(ble_evt_t const * p_ble_evt)
     switch (p_ble_evt->header.evt_id)
     {
         case BLE_GAP_EVT_CONNECTED:
+
+            if(m_conn_handle_nao_c == BLE_CONN_HANDLE_INVALID)
+              scan_start();
+
             NRF_LOG_INFO("Peripheral connected");
             board_led_on(PERIPHERAL_CONNECTED_LED);
 
@@ -942,6 +956,15 @@ static void on_ble_peripheral_evt(ble_evt_t const * p_ble_evt)
                          p_gap_evt->params.disconnected.reason);
 
             board_led_off(PERIPHERAL_CONNECTED_LED);
+ 
+            if(m_conn_handle_nao_c != BLE_CONN_HANDLE_INVALID)
+             {
+               err_code = sd_ble_gap_disconnect(m_conn_handle_nao_c,BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+               scan_stop();
+               APP_ERROR_CHECK(err_code);
+             }
+            else
+              scan_stop();
 
             err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
             APP_ERROR_CHECK(err_code);
@@ -1351,7 +1374,6 @@ uint32_t proxy_local_cmd(uint8_t const *nao_write_data, uint16_t nao_write_data_
          memcpy(m_target_periph_name+nao_write_data_len-2,&terminator,1);
          write_cfg_to_flash();
          pm_peer_delete_all();
-         NVIC_SystemReset();     
         }
        break;
      case 0x33:
@@ -1367,6 +1389,11 @@ uint32_t proxy_local_cmd(uint8_t const *nao_write_data, uint16_t nao_write_data_
        NRF_LOG_INFO("forward notification returned: %d",err_code);
        free(notif_buffer);
        break;
+     case 0x44:
+       NRF_LOG_INFO("Local command 0x44 - reset proxy");
+       NVIC_SystemReset();
+       break;
+
     }
    return NRF_SUCCESS;
  }
@@ -1526,7 +1553,7 @@ int main(void)
 
     power_management_init();
     ble_stack_init();
-    fstorage_init();
+    my_fds_init();
     read_cfg_from_flash();
     scan_init();
     gap_params_init();
