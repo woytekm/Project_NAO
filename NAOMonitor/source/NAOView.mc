@@ -80,6 +80,7 @@ enum {
 	var gotNAOData=false;
 	var NAOProfileName1 = "";
 	var NAOProfileName2 = "";	
+	var NAOName="";
 	
 	
 	//gpio demo mode settings
@@ -527,13 +528,28 @@ enum {
 		var getNAOConf7320 = [0x09,0x73,0x20]b; // first part of profile name
 		var getNAOConf7321 = [0x09,0x73,0x21]b; // second part of profile name
 		var getNAOConf7303 = [0x09,0x73,0x03]b; // rear light status
+		var getNAOConf6933 = [0x69,0x33]b; // get NAO name from proxy
 		
 		queue.add(self,[NAOWRChar,queue.C_WRITER,getNAOConf7320],profileManager.NAO_PROXY_WRITE);
 		queue.add(self,[NAOWRChar,queue.C_WRITER,getNAOConf7321],profileManager.NAO_PROXY_WRITE);
 		queue.add(self,[NAOWRChar,queue.C_WRITER,getNAOConf7303],profileManager.NAO_PROXY_WRITE);
+		queue.add(self,[NAOWRChar,queue.C_WRITER,getNAOConf6933],profileManager.NAO_PROXY_WRITE);
 	
 	}
-	 
+	
+	
+	function NAOProxySendNAOName(NewNAOName) {
+	
+		var NAOService = device.getService(profileManager.NAO_PROXY_SERVICE );
+		var NAOWRChar = NAOService.getCharacteristic(profileManager.NAO_PROXY_WRITE);	
+	
+		var setNAOName6922 = [0x69,0x22]b; // get NAO name from proxy
+	
+	    var sendBuffer = setNAOName6922.addAll(NewNAOName.toCharArray());
+	    
+	    queue.add(self,[NAOWRChar,queue.C_WRITER,sendBuffer],profileManager.NAO_PROXY_WRITE);
+	
+	} 
 
 	//
 	//general handlers - some not used in demo mode
@@ -610,12 +626,7 @@ enum {
 	   var msg_len = notif_data.size();
 	   if(msg_len != 20) {return false;}
 
-
-       if(NAOProfileName1.length() < 2)
-         {
-           NAORefreshData();
-         }
-	   
+	    
 	   var msg_type = notif_data.decodeNumber( Lang.NUMBER_FORMAT_UINT16, { :offset => 0  , :endianness => Lang.ENDIAN_BIG} );
 	   
 	   if(msg_type == 0x2003) 
@@ -634,23 +645,34 @@ enum {
 	     }
 	    else if(msg_type==0x7320) // first part of profile name
 	     {
-	      NAOProfileName1 = convertNAObytesToString(notif_data.slice(2,null));
+	      NAOProfileName1 = convertNAOUnicodeBytesToString(notif_data.slice(2,null));
 	      notifDataTimeout = 0;
 	     }
 	    else if(msg_type==0x7321) // second part of profile name
 	     {
-	      NAOProfileName2 = convertNAObytesToString(notif_data.slice(2,null));
+	      NAOProfileName2 = convertNAOUnicodeBytesToString(notif_data.slice(2,null));
 	      notifDataTimeout = 0;
 	     }
 	    else if(msg_type == 0x7303) // rear light status: 1 - off, 2 - blink, 3 - constant
 	     {
 	      NAORearLightStat = notif_data[3];
 	      notifDataTimeout = 0;
-         }	   
+         }	  
+        else if(msg_type == 0x7777)
+         {
+          NAOName = convertNAObytesToString(notif_data.slice(2,null));
+	      notifDataTimeout = 0;
+	      return;
+         } 
+         
+        if(NAOProfileName1.length() < 2)
+         {
+          NAORefreshData();
+         }  
 	 }
 
 	 
-	function convertNAObytesToString(byteArray)
+	function convertNAOUnicodeBytesToString(byteArray)
 	 {
 	   
 	   var sz=byteArray.size();
@@ -663,6 +685,20 @@ enum {
 	   return str;
 	 }
 	 
+    function convertNAObytesToString(byteArray)
+	 {
+	   
+	   var sz=byteArray.size();
+	   var str="";
+	   
+	   for(var i=0;i<sz;i++) 
+	     {
+	       if(byteArray[i] == 0x00)
+	        {return str;}
+	       str=str+byteArray[i].toChar();   
+	     }
+	   return str;
+	 } 
 	  
 	// set up for a new connection
 	function resetConnection(doClear) {

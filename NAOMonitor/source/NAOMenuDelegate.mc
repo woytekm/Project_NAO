@@ -2,6 +2,32 @@ using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
 
+
+var screenMessage = "Press Menu to Enter Text";
+
+class MyTextPickerDelegate extends Ui.TextPickerDelegate {
+
+    var view;
+
+    function initialize(v) {
+        view = v;
+        TextPickerDelegate.initialize();
+    }
+
+    function onTextEntered(text, changed) {
+        screenMessage = text + "\n" + "Changed: " + changed;
+        
+        if(changed)
+         {
+          view.NAOProxySendNAOName(text);
+         }
+    }
+
+    function onCancel() {
+        screenMessage = "Canceled";
+    }
+}
+
 //class PiMenuDelegate extends Ui.MenuInputDelegate {
 class NAOMenuDelegate extends Ui.Menu2InputDelegate {
 	var profileManager,view,queue;
@@ -23,7 +49,6 @@ class NAOMenuDelegate extends Ui.Menu2InputDelegate {
 		 
     	if(id.equals("toggleRed")) 
     	{
-    	 Sys.println("Sending toggle red");
     	 var setNAOConf730300 = [0x09,0x74,0x03,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00]b; // rear light status
     	 var setNAOConf730301 = [0x09,0x74,0x03,0x01,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00]b; // rear light status
     	 var setNAOConf730302 = [0x09,0x74,0x03,0x01,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00]b; // rear light status
@@ -55,9 +80,25 @@ class NAOMenuDelegate extends Ui.Menu2InputDelegate {
     	} 
     	else if(id.equals("clearBond")) 
     	{    	
-    	 Sys.println("Sending clear bond");
          var setProxyRemoveBond = [0x69,0x11]b;
          queue.add(view,[NAOWRChar,queue.C_WRITER,setProxyRemoveBond],profileManager.NAO_PROXY_WRITE);
         }
+        else if(id.equals("resetProxy")) 
+    	{    	
+         var resetProxy = [0x69,0x44]b;
+         queue.add(view,[NAOWRChar,queue.C_WRITER,resetProxy],profileManager.NAO_PROXY_WRITE);
+        }
+        else if(id.equals("setName"))
+        {
+        if (Ui has :TextPicker) {
+                WatchUi.pushView(
+                    new Ui.TextPicker(view.NAOName),
+                    new MyTextPickerDelegate(view),
+                    WatchUi.SLIDE_DOWN
+                );
+            
+              }
+        }
+    
     }
 }

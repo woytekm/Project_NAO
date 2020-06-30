@@ -28,6 +28,8 @@ class NAODelegate extends Ui.BehaviorDelegate {
 				myMenu.setTitle("NAO funcs") ; 
 		    	myMenu.addItem(new Ui.MenuItem("toggle red",null,"toggleRed",null));
 	      	    myMenu.addItem(new Ui.MenuItem("clear proxy bond",null,"clearBond",null));
+	      	    myMenu.addItem(new Ui.MenuItem("reset proxy",null,"resetProxy",null));
+	      	    myMenu.addItem(new Ui.MenuItem("set NAO name",null,"setName",null));
 		   		}		            			
 				Ui.pushView(myMenu, new NAOMenuDelegate(profileManager,view,queue), Ui.SLIDE_IMMEDIATE);  			
 			}
