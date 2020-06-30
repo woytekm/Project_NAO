@@ -26,6 +26,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 #include "nordic_common.h"
 #include "nrf_sdh.h"
 #include "nrf_sdh_soc.h"
@@ -47,7 +48,9 @@
 #include "ble_hrs_c.h"
 #include "ble_rscs_c.h"
 #include "ble_conn_state.h"
-#include "nrf_fstorage.h"
+#include "nrf_sdh.h"
+#include "nrf_sdh_ble.h"
+#include "nrf_fstorage_sd.h"
 #include "fds.h"
 #include "nrf_ble_gatt.h"
 #include "nrf_ble_qwr.h"
@@ -104,6 +107,9 @@
 #define HART_RATE_SERVICE_UUID_IDX      0                                           /**< Hart Rate service UUID index in array. */
 #define RSCS_SERVICE_UUID_IDX           1                                           /**< RSCS service UUID index in array. */
 
+#define CONFIG_BUF_LEN                  256
+#define USERBLOCK                      0x60000
+
 /**@brief   Priority of the application BLE event handler.
  * @note    You shouldn't need to modify this value.
  */
@@ -148,7 +154,13 @@ static ble_nao_conf_c_t              m_ble_nao_conf_c;
 /**@brief Names that the central application scans for, and that are advertised by the peripherals.
  *  If these are set to empty strings, the UUIDs defined below are used.
  */
-static char const m_target_periph_name[] = "";
+
+#define MAXNAME 30
+
+static char m_default_periph_name[MAXNAME] = "NAO+_0100";
+static char m_target_periph_name[MAXNAME] = ""; // NAO+_0100 is the default
+
+nrf_fstorage_api_t *m_fs_api;
 
 /**@brief UUIDs that the central application scans for if the name above is set to an empty string,
  * and that are to be advertised by the peripherals.
@@ -190,6 +202,130 @@ static ble_gap_scan_params_t m_scan_param =                 /**< Scan parameters
     .scan_phys     = BLE_GAP_PHY_1MBPS,
     .extended      = true,
 };
+
+
+static void fstorage_evt_handler(nrf_fstorage_evt_t * p_evt);
+static void idle_state_handle(void);
+
+NRF_FSTORAGE_DEF(nrf_fstorage_t fstorage) =
+{
+    /* Set a handler for fstorage events. */
+    .evt_handler = fstorage_evt_handler,
+
+    /* These below are the boundaries of the flash space assigned to this instance of fstorage.
+     * You must set these manually, even at runtime, before nrf_fstorage_init() is called.
+     * The function nrf5_flash_end_addr_get() can be used to retrieve the last address on the
+     * last page of flash available to write data. */
+    .start_addr = 0x000FC000,
+    .end_addr   = 0x000FE000,
+};
+
+void wait_for_flash_ready(nrf_fstorage_t const * p_fstorage)
+{
+    /* While fstorage is busy, sleep and wait for an event. */
+    while (nrf_fstorage_is_busy(p_fstorage))
+    {
+        idle_state_handle();
+    }
+}
+
+static void fstorage_evt_handler(nrf_fstorage_evt_t * p_evt)
+{
+    if (p_evt->result != NRF_SUCCESS)
+    {
+        NRF_LOG_INFO("--> Event received: ERROR while executing an fstorage operation (%d).",p_evt->result);
+        return;
+    }
+
+    switch (p_evt->id)
+    {
+        case NRF_FSTORAGE_EVT_WRITE_RESULT:
+        {
+            NRF_LOG_INFO("--> Event received: wrote %d bytes at address 0x%x.",
+                         p_evt->len, p_evt->addr);
+        } break;
+
+        case NRF_FSTORAGE_EVT_ERASE_RESULT:
+        {
+            NRF_LOG_INFO("--> Event received: erased %d page from address 0x%x.",
+                         p_evt->len, p_evt->addr);
+        } break;
+
+        default:
+            break;
+    }
+}
+
+void fstorage_init()
+ {
+
+   uint8_t rc;
+   m_fs_api = &nrf_fstorage_sd;
+   rc = nrf_fstorage_init(&fstorage, m_fs_api, NULL);
+   APP_ERROR_CHECK(rc);
+
+ }
+
+
+void build_config(char *config_buffer)
+ {
+   snprintf(config_buffer,CONFIG_BUF_LEN,"%s:",m_target_periph_name);
+ }
+
+void apply_config(char *config_buffer)
+ {
+  char *token;
+
+  //config buffer is CONFIG_BUF_LEN long, config data is separated by ":", currently only one field is implemented - NAO name, so only one token is parsed
+  token = strtok(config_buffer,":");
+  if(token == NULL)
+   {
+    strcpy(m_target_periph_name,m_default_periph_name);
+    NRF_LOG_INFO("setting NAO name to: %s",m_default_periph_name);
+   }
+  else
+   {
+    strcpy(m_target_periph_name,token);
+    NRF_LOG_INFO("setting NAO name to: %s",token);
+   }
+ }
+
+void read_cfg_from_flash()
+ {
+
+  uint16_t len;
+  uint8_t rc;
+
+  uint8_t fstorage_data[CONFIG_BUF_LEN] = {0};
+
+  rc = nrf_fstorage_read(&fstorage, fstorage.start_addr, fstorage_data, CONFIG_BUF_LEN);
+
+  if (rc != NRF_SUCCESS)
+   {
+     NRF_LOG_INFO("error, nrf_fstorage_read returned: %s\n",nrf_strerror_get(rc));
+     return;
+   }
+
+  apply_config((char *)fstorage_data);
+ 
+
+ }
+
+
+void write_cfg_to_flash()
+ {
+   uint8_t rc;
+
+   uint8_t fstorage_data[CONFIG_BUF_LEN] = {0};
+
+   build_config((char *)fstorage_data);
+   rc = nrf_fstorage_erase(&fstorage, fstorage.start_addr, 1, NULL); 
+   APP_ERROR_CHECK(rc);
+   rc = nrf_fstorage_write(&fstorage, fstorage.start_addr, &fstorage_data, CONFIG_BUF_LEN, NULL);
+   APP_ERROR_CHECK(rc);
+   wait_for_flash_ready(&fstorage);
+ }
+
 
 
 volatile bool NAO_pair_now;
@@ -1196,7 +1332,7 @@ uint32_t proxy_local_cmd(uint8_t const *nao_write_data, uint16_t nao_write_data_
  {
    // CMD 0x11: erase bonds, restart
    // CMD 0x22: set NAO name (write setting to flash, erase bonds, restart)
-   // CMD 0x33: default NAO name (erase setting from flash, restart and let application use default name PETZL_NAO+_0100)
+   // CMD 0x33: get NAO name 
    switch(nao_write_data[1])
     {
      case 0x11:
@@ -1205,10 +1341,31 @@ uint32_t proxy_local_cmd(uint8_t const *nao_write_data, uint16_t nao_write_data_
        NVIC_SystemReset();
        break;
      case 0x22:
-       NRF_LOG_INFO("Local command 0x22");
+       NRF_LOG_INFO("Local command 0x22 - set NAO name and restart (got: %s)",nao_write_data+2);
+       if((nao_write_data_len > 2) && (nao_write_data_len < MAXNAME + 2))
+        {
+         const uint8_t *ptr;
+         uint8_t terminator = 0;
+         ptr = nao_write_data+2;
+         memcpy(m_target_periph_name,ptr,nao_write_data_len-2);
+         memcpy(m_target_periph_name+nao_write_data_len-2,&terminator,1);
+         write_cfg_to_flash();
+         pm_peer_delete_all();
+         NVIC_SystemReset();     
+        }
        break;
      case 0x33:
-       NRF_LOG_INFO("Local command 0x33");
+       NRF_LOG_INFO("Local command 0x33 - get NAO name");
+       uint8_t notif_buffer[20];
+       bzero(notif_buffer,20);
+       uint8_t err_code;
+       notif_buffer[0] = 0x77;
+       notif_buffer[1] = 0x77;
+       strcpy((char *)notif_buffer+2, (char *)m_target_periph_name);
+       NRF_LOG_INFO("sending NAO name: %s",notif_buffer+2);
+       err_code = ble_nao_stat_notif_forward(&m_nao_proxy,notif_buffer,20);
+       NRF_LOG_INFO("forward notification returned: %d",err_code);
+       free(notif_buffer);
        break;
     }
    return NRF_SUCCESS;
@@ -1369,6 +1526,8 @@ int main(void)
 
     power_management_init();
     ble_stack_init();
+    fstorage_init();
+    read_cfg_from_flash();
     scan_init();
     gap_params_init();
     gatt_init();
