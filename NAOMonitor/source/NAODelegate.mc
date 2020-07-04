@@ -41,7 +41,7 @@ class NAODelegate extends Ui.BehaviorDelegate {
     		if(view.page<0) {view.page=view.MAXSCREENS-1;}
     		view.doRequests();
     		Ui.requestUpdate();
-    	return true;
+    	return true; 
     }
     
     function onNextPage() {
